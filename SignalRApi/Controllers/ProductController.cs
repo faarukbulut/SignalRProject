@@ -54,12 +54,13 @@ namespace SignalRApi.Controllers
 				ImageUrl= createProductDto.ImageUrl,
 				Price= createProductDto.Price,
 				ProductName= createProductDto.ProductName,
-				ProductStatus = true
+				ProductStatus = true,
+				CategoryID = createProductDto.CategoryID
 			});
 			return Ok("Başarıyla eklendi.");
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 		public IActionResult DeleteProduct(int id)
 		{
 			var value = _productService.TGetByID(id);
@@ -78,11 +79,12 @@ namespace SignalRApi.Controllers
 				ProductStatus = updateProductDto.ProductStatus,
 				ProductName= updateProductDto.ProductName,
 				Price = updateProductDto.Price,
+				CategoryID = updateProductDto.CategoryID
 			});
 			return Ok("Başarıyla güncellendi.");
 		}
 
-		[HttpGet("GetProduct")]
+		[HttpGet("{id}")]
 		public IActionResult GetProduct(int id)
 		{
 			var value = _productService.TGetByID(id);
