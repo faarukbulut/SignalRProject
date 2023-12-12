@@ -2,7 +2,7 @@
 
 namespace SignalRWebUI.ViewComponents.AdminLayoutComponents
 {
-	public class _AdminLayoutNavbarPartialComponent : ViewComponent
+	public class _AdminLayoutSidebarComponentPartial : ViewComponent
 	{
 		public IViewComponentResult Invoke()
 		{
