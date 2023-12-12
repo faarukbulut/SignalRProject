@@ -6,6 +6,7 @@ using SignalR.DtoLayer.ContactDto;
 using SignalR.DtoLayer.DiscountDto;
 using SignalR.DtoLayer.FeatureDto;
 using SignalR.DtoLayer.ProductDto;
+using SignalR.DtoLayer.SliderDto;
 using SignalR.DtoLayer.SocialMediaDto;
 using SignalR.DtoLayer.TestimonialDto;
 using SignalR.EntityLayer.Entities;
@@ -70,6 +71,10 @@ namespace SignalRApi.Mapping
 			CreateMap<Testimonial, GetTestimonialDto>().ReverseMap();
 			CreateMap<Testimonial, ResultTestimonialDto>().ReverseMap();
 			CreateMap<Testimonial, UpdateTestimonialDto>().ReverseMap();
+
+			// Slider
+			CreateMap<Slider, ResultSliderDto>().ReverseMap();
+
 		}
 	}
 }
