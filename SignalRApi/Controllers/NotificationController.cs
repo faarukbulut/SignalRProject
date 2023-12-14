@@ -45,10 +45,11 @@ namespace SignalRApi.Controllers
 			{
 				Description= createNotificationDto.Description,
 				Icon= createNotificationDto.Icon,
-				Date= createNotificationDto.Date,
+				Date= Convert.ToDateTime(DateTime.Now.ToShortDateString()),
 				Status = false,
 				Type= createNotificationDto.Type,
 			});
+			return Ok("Başarıyla eklendi.");
 		}
 
 		[HttpDelete("{id}")]
@@ -72,13 +73,14 @@ namespace SignalRApi.Controllers
 		{
 			_notificationService.TUpdate(new Notification()
 			{
-				NotificationID = updateNotificationDto.NotificationID
+				NotificationID = updateNotificationDto.NotificationID,
 				Description = updateNotificationDto.Description,
 				Icon = updateNotificationDto.Icon,
 				Date = updateNotificationDto.Date,
 				Status = updateNotificationDto.Status,
 				Type = updateNotificationDto.Type,
 			});
+			return Ok("Başarıyla güncellendi.");
 		}
 	}
 }

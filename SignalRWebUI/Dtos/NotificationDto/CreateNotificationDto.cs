@@ -1,4 +1,4 @@
-﻿namespace SignalR.DtoLayer.NotificationDto
+﻿namespace SignalRWebUI.Dtos.NotificationDto
 {
 	public class CreateNotificationDto
 	{
