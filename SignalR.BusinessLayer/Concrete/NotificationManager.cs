@@ -13,6 +13,11 @@ namespace SignalR.BusinessLayer.Concrete
 			_notificationDal = notificationDal;
 		}
 
+		public List<Notification> TGetAllNotificationByFalse()
+		{
+			return _notificationDal.GetAllNotificationByFalse();
+		}
+
 		public void TAdd(Notification entity)
 		{
 			_notificationDal.Add(entity);
