@@ -112,10 +112,11 @@
             var id = value;
             $.ajax({
                 type: 'post',
-                data: {item:id},
+                data: { item: id },
+                url: "/Basket/AddBasket/" + id,
                 contentType: 'json',
                 success: function(){
-                    swal("Seçilen Ürün " +id, "", "success");
+                    swal("Başarılı!", "Seçilen ürün sepetinize eklendi.", "success");
                 }
             });
         }
