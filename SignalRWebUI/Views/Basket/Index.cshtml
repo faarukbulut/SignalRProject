@@ -1,6 +1,10 @@
 ﻿@model List<ResultBasketWithProduct>
 @{
     Layout = null;
+
+    decimal basketTotalPrice = 0;
+    decimal tax = 0;
+    decimal basketTotalPriceWithTax = 0;
 }
 
 <!DOCTYPE html>
@@ -40,6 +44,10 @@
                     <tbody class="align-middle">
                         @foreach(var item in Model)
                         {
+                            basketTotalPrice = Model.Sum(x => x.Price);
+                            tax = basketTotalPrice / 100 * 10;
+                            basketTotalPriceWithTax = basketTotalPrice + tax;
+
                              <tr>
                                 <td class="align-middle">@item.ProductName</td>
                                 <td class="align-middle">@item.Count</td>
@@ -72,15 +80,15 @@
                     <div id="container" class="p-3 text-white">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Ara Toplam</h6>
-                            <h6><span id="totalprice">224</span>₺</h6>
+                            <h6><span id="totalprice">@basketTotalPrice</span>₺</h6>
                         </div>
                         <div class="d-flex justify-content-between mb-5">
-                            <h6>KDV Oranı</h6>
-                            <h6 id="kdv">20₺</h6>
+                            <h6>KDV Oranı (%10)</h6>
+                            <h6 id="kdv">@tax₺</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6>Toplam Tutar</h6>
-                            <h6><span id="totalpricewithkdv">244</span>₺</h6>
+                            <h6><span id="totalpricewithkdv">@basketTotalPriceWithTax</span>₺</h6>
                         </div>
                     </div>
                 </div>
