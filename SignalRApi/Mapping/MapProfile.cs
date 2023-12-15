@@ -4,7 +4,6 @@ using SignalR.DtoLayer.BookingDto;
 using SignalR.DtoLayer.CategoryDto;
 using SignalR.DtoLayer.ContactDto;
 using SignalR.DtoLayer.DiscountDto;
-using SignalR.DtoLayer.FeatureDto;
 using SignalR.DtoLayer.ProductDto;
 using SignalR.DtoLayer.SliderDto;
 using SignalR.DtoLayer.SocialMediaDto;
@@ -47,12 +46,6 @@ namespace SignalRApi.Mapping
 			CreateMap<Discount, ResultDiscountDto>().ReverseMap();
 			CreateMap<Discount, UpdateDiscountDto>().ReverseMap();
 
-			// Feature
-			CreateMap<Feature, CreateFeatureDto>().ReverseMap();
-			CreateMap<Feature, GetFeatureDto>().ReverseMap();
-			CreateMap<Feature, ResultFeatureDto>().ReverseMap();
-			CreateMap<Feature, UpdateFeatureDto>().ReverseMap();
-
 			// Product
 			CreateMap<Product, CreateProductDto>().ReverseMap();
 			CreateMap<Product, GetProductDto>().ReverseMap();
@@ -73,7 +66,9 @@ namespace SignalRApi.Mapping
 			CreateMap<Testimonial, UpdateTestimonialDto>().ReverseMap();
 
 			// Slider
+			CreateMap<Slider, CreateSliderDto>().ReverseMap();
 			CreateMap<Slider, ResultSliderDto>().ReverseMap();
+			CreateMap<Slider, UpdateSliderDto>().ReverseMap();
 
 		}
 	}

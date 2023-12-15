@@ -1,9 +1,8 @@
-﻿@model UpdateFeatureDto
+﻿@model CreateSliderDto
 @{
-    ViewData["Title"] = "UpdateFeature";
+    ViewData["Title"] = "CreateSlider";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 
 <div class="content">
 	<div class="container-fluid">
@@ -13,10 +12,9 @@
 				<form method="post">
 					<div class="card">
 						<div class="card-header">
-							<div class="card-title">Öne Çıkan Düzenle</div>
+							<div class="card-title">Öne Çıkan Ekle</div>
 						</div>
 						<div class="card-body">
-							@Html.HiddenFor(x => x.FeatureID)
 							<div class="form-group">
 								<label>Başlık 1</label>
 								<input asp-for="Title1" type="text" class="form-control">
@@ -43,7 +41,7 @@
 							</div>
 						</div>
 						<div class="card-action">
-							<button class="btn btn-primary">Düzenle</button>
+							<button class="btn btn-primary">Ekle</button>
 						</div>
 					</div>
 				</form>
